@@ -523,3 +523,20 @@ button{font:inherit}
 .metric-item .metric-label {
     grid-column: 1 / -1;
 }
+
+/* Keep metric number and plus symbol together */
+.metric-value-wrap {
+    display: inline-flex !important;
+    align-items: baseline;
+    gap: 2px;
+    white-space: nowrap;
+}
+
+.metric-value-wrap .metric-number,
+.metric-value-wrap .plus {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    white-space: nowrap;
+}
