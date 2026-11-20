@@ -505,3 +505,21 @@ button{font:inherit}
   .floating-cta{right:12px;bottom:12px}
   .floating-cta__btn{min-width:120px;padding:.8rem .9rem}
 }
+
+/* Fix metric number and suffix alignment */
+.metric-item {
+    display: grid !important;
+    grid-template-columns: max-content max-content;
+    align-items: baseline;
+    column-gap: 4px;
+}
+
+.metric-item .metric-number,
+.metric-item .plus {
+    display: inline-block !important;
+    white-space: nowrap;
+}
+
+.metric-item .metric-label {
+    grid-column: 1 / -1;
+}
