@@ -635,3 +635,36 @@ button{font:inherit}
     min-height: 0;
   }
 }
+
+
+/* Floating WhatsApp contact button */
+.floating-cta__btn.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  background: linear-gradient(135deg, #20c968, #128c4a);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(18,140,74,.32);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+.floating-cta__btn.whatsapp svg {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  fill: currentColor;
+}
+.floating-cta__btn.whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(18,140,74,.42);
+  filter: brightness(1.06);
+}
+.floating-cta__btn.whatsapp:focus-visible {
+  outline: 3px solid rgba(34,211,238,.9);
+  outline-offset: 3px;
+}
+@media (max-width: 560px) {
+  .floating-cta { right: 12px; bottom: 12px; gap: .55rem; }
+  .floating-cta__btn.whatsapp { min-width: 120px; }
+}
