@@ -540,3 +540,98 @@ button{font:inherit}
     width: auto !important;
     white-space: nowrap;
 }
+
+
+/* Hero proof cards: place campaign highlights below the portrait, never over it */
+.hero-visual {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-visual .profile-card {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.hero-proof-cards {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-proof-cards .floating-card {
+  position: relative;
+  inset: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 148px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .55rem;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(17, 27, 53, .96), rgba(8, 14, 31, .94));
+  border: 1px solid rgba(255,255,255,.11);
+  box-shadow: 0 16px 38px rgba(0,0,0,.24);
+  backdrop-filter: blur(16px);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.hero-proof-cards .floating-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34,211,238,.32);
+  box-shadow: 0 20px 46px rgba(0,0,0,.32);
+}
+
+.hero-proof-cards .floating-card strong {
+  display: block;
+  font-size: .98rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.hero-proof-cards .floating-card small {
+  display: block;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.hero-proof-cards .pill {
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 1120px) {
+  .hero-visual {
+    min-height: 0;
+  }
+  .hero-proof-cards {
+    margin-top: .25rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-proof-cards {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+  }
+  .hero-proof-cards .floating-card {
+    min-height: 0;
+  }
+}
